@@ -1,0 +1,61 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^index\.html$ media.php?fModule=dashboard&id=$1 [L]
+
+RewriteRule ^logoslider\.html$ media.php?fModule=logoSlider&id=$1 [L]
+RewriteRule ^logoslider-([0-9]+)\.html$ media.php?fModule=logoSlider&err=$1 [L]
+RewriteRule ^actLogoSlider-([0-9]+)-(.*)\.html$ pages/settingWeb/logoSlider/aksiLogoSlider.php?id=$1&act=$2 [L]
+RewriteRule ^actLogoSlider-(.*)\.html$ pages/settingWeb/logoSlider/aksiLogoSlider.php?act=$1 [L]
+
+RewriteRule ^menu\.html$ media.php?fModule=menuSubmenu&id=$1 [L]
+RewriteRule ^menu-([0-9]+)\.html$ media.php?fModule=menuSubmenu&err=$1 [L]
+RewriteRule ^actMenu-([0-9]+)-(.*)\.html$ pages/settingWeb/menuSubmenu/aksiMenu.php?id=$1&act=$2 [L]
+RewriteRule ^actMenu-([0-9]+)-(.*)-(.*)\.html$ pages/settingWeb/menuSubmenu/aksiMenu.php?id=$1&act=$2&st=$3 [L]
+RewriteRule ^actMenu-(.*)\.html$ pages/settingWeb/menuSubmenu/aksiMenu.php?act=$1 [L]
+
+RewriteRule ^news\.html$ media.php?fModule=news&id=$1 [L]
+RewriteRule ^news-([0-9]+)\.html$ media.php?fModule=news&err=$1 [L]
+RewriteRule ^addNews\.html$ media.php?fModule=add-news&id=$1 [L]
+RewriteRule ^editNews-([0-9]+)\.html$ media.php?fModule=edit-news&id=$1 [L]
+RewriteRule ^actNews-([0-9]+)-(.*)\.html$ pages/contentWeb/news/aksiNews.php?id=$1&act=$2 [L]
+RewriteRule ^actNews-(.*)\.html$ pages/contentWeb/news/aksiNews.php?act=$1 [L]
+
+RewriteRule ^email\.html$ media.php?fModule=emailTestimoni&id=$1 [L]
+RewriteRule ^email-(.*)\.html$ media.php?fModule=emailTestimoni&id=$1 [L]
+RewriteRule ^email-([0-9]+)\.html$ media.php?fModule=emailTestimoni&err=$1 [L]
+RewriteRule ^detailEmail-([a-zA-Z0-9-_]+)\.html$ media.php?fModule=detailEmail&id=$1 [L]
+RewriteRule ^actEmail-([0-9]+)-(.*)\.html$ pages/dataCompany/emailAndTestimoni/aksiEmail.php?id=$1&act=$2 [L]
+RewriteRule ^actEmail-(.*)\.html$ pages/dataCompany/emailAndTestimoni/aksiEmail.php?act=$1 [L]
+
+RewriteRule ^about\.html$ media.php?fModule=aboutAndContact&id=$1 [L]
+RewriteRule ^editTeam-([0-9]+)\.html$ media.php?fModule=edit-team&id=$1 [L]
+RewriteRule ^actAbout-([0-9]+)-(.*)-(.*)\.html$ pages/dataCompany/aboutAndContact/aksiAboutContact.php?id=$1&act=$2&st=$3 [L]
+RewriteRule ^about-([0-9]+)\.html$ media.php?fModule=aboutAndContact&err=$1 [L]
+RewriteRule ^actAbout-(.*)\.html$ pages/dataCompany/aboutAndContact/aksiAboutContact.php?act=$1 [L]
+RewriteRule ^actTeam-([0-9]+)-(.*)\.html$ pages/dataCompany/aboutAndContact/aksiAboutContact.php?id=$1&act=$2 [L]
+RewriteRule ^actProfile-([0-9]+)-(.*)\.html$ media.php?fModule=edit-profile&id=$1&act=$2 [L]
+
+RewriteRule ^actService-([0-9]+)-(.*)-(.*)\.html$ pages/dataCompany/productsAndServices/aksiProdukAndService.php?id=$1&st=$2&act=$3 [L]
+RewriteRule ^product\.html$ media.php?fModule=productsAndServices&id=$1 [L]
+RewriteRule ^product-(.*)\.html$ media.php?fModule=productsAndServices&id=$1 [L]
+RewriteRule ^product-([0-9]+)\.html$ media.php?fModule=productsAndServices&err=$1 [L]
+RewriteRule ^addProduk\.html$ media.php?fModule=add-produk&id=$1 [L]
+RewriteRule ^actProduct-([0-9]+)-(.*)\.html$ pages/dataCompany/productsAndServices/aksiProdukAndService.php?id=$1&act=$2 [L]
+RewriteRule ^actProduct-(.*)\.html$ pages/dataCompany/productsAndServices/aksiProdukAndService.php?act=$1 [L]
+RewriteRule ^editProduct-([0-9]+)\.html$ media.php?fModule=edit-produk&id=$1 [L]
+
+RewriteRule ^viewComments-([0-9]+)\.html$ media.php?fModule=view-comments&id=$1 [L]
+RewriteRule ^viewComments-([0-9]+)-([0-9]+)\.html$ media.php?fModule=view-comments&id=$1&err=$2 [L]
+
+RewriteRule ^orders\.html$ media.php?fModule=OrDers123&id=$1 [L]
+RewriteRule ^orders-(.*)\.html$ media.php?fModule=OrDers123&id=$1 [L]
+RewriteRule ^actOrders-([0-9]+)\.html$ media.php?fModule=detail-OrDers123&id=$1 [L]
+RewriteRule ^order-([0-9]+)-(.*)\.html$ pages/dataCompany/orders/order_pdf.php?id=$1 [L]
+RewriteRule ^actOrder-(.*)\.html$ pages/dataCompany/orders/aksiOrder.php?act=$1 [L]
+
+RewriteRule ^orders-([0-9]+)\.html$ media.php?fModule=OrDers123&err=$1 [L]
+RewriteRule ^report\.html$ pages/report/report.php?id=$1 [L]
+RewriteRule ^logout\.html$ logout.php?tanda=oke [L]
+Options All -Indexes
+</IfModule>

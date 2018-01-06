@@ -1,0 +1,46 @@
+		$img1 = $_FILES ['image1']['name'];
+		$ukuran1 = $_FILES ['image1']['size'];
+		$tipe1 = $_FILES ['image1']['type'];
+		$error1 = $_FILES ['image1']['error'];
+		$file_sementara1 = $_FILES['image1' ]['tmp_name'];
+
+		$img2 = $_FILES ['image2']['name'];
+		$ukuran2 = $_FILES ['image2']['size'];
+		$tipe2 = $_FILES ['image2']['type'];
+		$error2 = $_FILES ['image2']['error'];
+		$file_sementara2 = $_FILES['image2' ]['tmp_name'];
+
+		$img3 = $_FILES ['image3']['name'];
+		$ukuran3 = $_FILES ['image3']['size'];
+		$tipe3 = $_FILES ['image3']['type'];
+		$error3 = $_FILES ['image3']['error'];
+		$file_sementara3 = $_FILES['image3' ]['tmp_name'];
+
+		$max_size = 30000000; //dalam bytes
+
+		$ekstensi_file1=substr(strtolower(strchr($img1,".")),1);
+		$ekstensi_file2=substr(strtolower(strchr($img2,".")),1);
+		$ekstensi_file3=substr(strtolower(strchr($img3,".")),1);
+		
+
+			$cons="chsNews";
+			$acak=rand(1,999);
+			$filterString1=str_replace(" ", "", $img1);
+			$filterString2=str_replace(" ", "", $img2);
+			$filterString3=str_replace(" ", "", $img3);
+			
+			$potong1=substr($filterString1,0,7);
+			$potong2=substr($filterString2,0,7);
+			$potong3=substr($filterString3,0,7);
+			
+			$gambar1=$cons.$acak.$potong.".".$ekstensi_file1;
+			$gambar2=$cons.$acak.$potong.".".$ekstensi_file2;
+			$gambar3=$cons.$acak.$potong.".".$ekstensi_file3;
+		
+		$vfile_upload1=$dir . $gambar1;
+		$vfile_upload2=$dir . $gambar2;
+		$vfile_upload3=$dir . $gambar3;
+		
+		$rename1=$dir.$gambar1;
+		$rename2=$dir.$gambar2;
+		$rename3=$dir.$gambar3;
